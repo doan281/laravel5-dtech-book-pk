@@ -1,0 +1,20 @@
+{
+    "name": "dtech-book/book",
+    "description": "Book Store",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "doanpv",
+            "email": "doan281@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "DtechBook\\Book\\": "src/"
+        },
+        "files": []
+    }
+}
