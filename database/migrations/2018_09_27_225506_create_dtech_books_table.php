@@ -19,7 +19,7 @@ class CreateDtechBooksTable extends Migration
             $table->string('author', 255)->nullable();
             $table->string('title', 255);
             $table->text('summary', 500)->nullable();
-            $table->string('avatar', 255);
+            $table->string('avatar', 255)->nullable();
             $table->text('content')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->bigInteger('total_view')->default(0);
