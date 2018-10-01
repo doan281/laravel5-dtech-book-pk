@@ -1,16 +1,16 @@
 @extends('book::layout')
-@section('title', 'Book list')
+@section('title', trans('book::book.book_list'))
 @section('content')
-    <h3>Book List</h3>
-    <div><a href="{{ route('books.create_path') }}">Create</a></div>
+    <h3>{{ trans('book::book.book_list') }}</h3>
+    <div><a href="{{ route('books.create_path') }}">{{ trans('book::book.create') }}</a></div>
     <div>
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th class="text-center">Book name</th>
-                <th class="text-center">Author</th>
-                <th class="text-center">Created at</th>
-                <th class="text-center">Actions</th>
+                <th class="text-center">{{ trans('book::book.book_title') }}</th>
+                <th class="text-center">{{ trans('book::book.author') }}</th>
+                <th class="text-center">{{ trans('book::book.created_at') }}</th>
+                <th class="text-center">{{ trans('book::book.actions') }}</th>
             </tr>
             </thead>
             <tbody>
@@ -20,18 +20,18 @@
                 <td>{{ $book->author }}</td>
                 <td></td>
                 <td>
-                    <a href="{{ route('books.show_path', [$book->id]) }}">show</a>
-                    <a href="{{ route('books.edit_path', [$book->id]) }}">edit</a>
+                    <a href="{{ route('books.show_path', [$book->id]) }}">{{ trans('book::book.show') }}</a> |
+                    <a href="{{ route('books.edit_path', [$book->id]) }}">{{ trans('book::book.edit') }}</a>
                     <form action="{{ route('books.destroy_path', [$book->id]) }}" method="POST">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="_method" value="DELETE">
-                        <input type="submit" value="delete">
+                        <input type="submit" value="{{ trans('book::book.delete') }}">
                     </form>
                 </td>
             </tr>
             @empty
                 <tr>
-                    <td colspan="4">No data.</td>
+                    <td colspan="4">{{ trans('book::book.no_data') }}</td>
                 </tr>
             @endforelse
             </tbody>
